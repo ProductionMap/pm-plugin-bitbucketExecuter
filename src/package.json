@@ -1,0 +1,11 @@
+{
+  "name": "pm-plugin-bitbucket",
+  "version": "1.0.0",
+  "description": "Simple Bitbucket api wrapper for pm",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Productionmap team (Roy Talyosef)",
+  "license": "ISC"
+}

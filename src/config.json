@@ -1,0 +1,85 @@
+{
+  "name": "Bitbucket",
+  "type": "executer",
+  "exposeRoute": false,
+  "execProgram": "node",
+  "main": "app.js",
+  "version": "1.0.0",
+  "methods": [
+    {
+      "name": "GET_PIPELINES",
+      "viewName": "get pipelines",
+      "params": [
+        {
+          "name": "AUTH",
+          "viewName": "auth",
+          "type": "string"
+        },
+        {
+          "name": "USERNAME",
+          "viewName": "username",
+          "type": "string"
+        },
+        {
+          "name": "REPOSITORY_SLUG",
+          "viewName": "repo slug",
+          "type": "string"
+        }
+
+      ],
+      "actionString": "curl -u AUTH -X GET https://api.bitbucket.org/2.0/repositories/USERNAME/REPOSITORY_SLUG/pipelines/"
+    },
+    {
+      "name": "GET_DOWNLOAD_LINKS",
+      "viewName": "get download links",
+      "params": [
+        {
+          "name": "AUTH",
+          "viewName": "auth",
+          "type": "string"
+        },
+        {
+          "name": "USERNAME",
+          "viewName": "username",
+          "type": "string"
+        },
+        {
+          "name": "REPOSITORY_SLUG",
+          "viewName": "repo slug",
+          "type": "string"
+        }
+
+      ],
+      "actionString": "curl -u AUTH -X GET https://api.bitbucket.org/2.0/repositories/USERNAME/REPOSITORY_SLUG/downloads/"
+    },
+    {
+      "name": "UPLOAD_ARTIFACT",
+      "viewName": "Upload new download artifact",
+      "params": [
+        {
+          "name": "AUTH",
+          "viewName": "auth",
+          "type": "string"
+        },
+        {
+          "name": "USERNAME",
+          "viewName": "username",
+          "type": "string"
+        },
+        {
+          "name": "REPOSITORY_SLUG",
+          "viewName": "repo slug",
+          "type": "string"
+        },
+        {
+          "name": "FILE_PATH",
+          "viewName": "file path",
+          "type": "string"
+        }
+
+      ],
+      "actionString": "curl -s -u AUTH -X POST https://api.bitbucket.org/2.0/repositories/USERNAME/REPOSITORY_SLUG/downloads/ -F files=FILE_PATH"
+    }
+  ],
+  "imgUrl": "logo.png"
+}
