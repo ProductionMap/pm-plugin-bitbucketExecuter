@@ -4,7 +4,8 @@
   "exposeRoute": false,
   "execProgram": "node",
   "main": "app.js",
-  "version": "1.0.0",
+  "version": "1.2.0",
+  "imgUrl": "logo.png",
   "methods": [
     {
       "name": "GET_PIPELINES",
@@ -80,6 +81,5 @@
       ],
       "actionString": "curl -s -u AUTH -X POST https://api.bitbucket.org/2.0/repositories/USERNAME/REPOSITORY_SLUG/downloads/ -F files=FILE_PATH"
     }
-  ],
-  "imgUrl": "logo.png"
+  ]
 }
